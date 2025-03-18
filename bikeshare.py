@@ -1,5 +1,4 @@
 import time
-import numpy as np
 import pandas as pd
 
 CITY_DATA = { 'chicago': "chicago.csv",
@@ -207,7 +206,7 @@ def user_stats(df):
         earliest_year = df['Birth Year'].min()
         print(f"The earliest year of birth is {earliest_year}.")
         most_recent_year = df['Birth Year'].max()
-        print(f"The earliest year of birth is {most_recent_year}.")
+        print(f"The most recent year of birth is {most_recent_year}.")
         most_common_year = df['Birth Year'].mode()
         print(f"The most common year of birth is {most_common_year}.")
         avg_max_age = int(df['max age'].mean())
