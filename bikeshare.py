@@ -117,7 +117,12 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+    Args:
+    (dataframe) df - dataframe as base for analysis, derived from load_data
+
+    """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -141,7 +146,11 @@ def time_stats(df):
     print('-'*40) 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip.
+    Args:
+    (dataframe) df - dataframe as base for analysis, derived from load_data
+
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -164,7 +173,10 @@ def station_stats(df):
     print('-'*40)
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration.
+    Args:
+    (dataframe) df - dataframe as base for analysis, derived from load_data
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -190,7 +202,10 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
+    Args:
+    (dataframe) df - dataframe as base for analysis, derived from load_data
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -259,7 +274,10 @@ def user_stats(df):
     print('-'*40)
 
 def print_raw_data(df):
-    """Returns raw data in increments if the user asks for it."""
+    """Returns raw data in increments if the user asks for it.
+    Args:
+    (dataframe) df - dataframe as base for analysis, derived from load_data
+    """
     while True:
         i = 5
         raw_data_answer = input("Would you like to see some raw data? ").lower()
