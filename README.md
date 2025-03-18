@@ -12,7 +12,7 @@ The project contains a python script that makes it possible for the user to get 
 - Based on the user input, output containing descriptive statistics and diagnostic statistics is displayed. 
 - Additional user requests depicts iterative samples of the raw data.  
 
-To use the project, download the files depicted below and run them through a CLI (e.g. Git Bash) via:
+To use the project, download the files depicted below and run them through a CLI (e.g. _Git Bash_) via:
 
 `python bikeshare.py`
 
@@ -22,8 +22,11 @@ Commits to the project exclude the csv files as the base of the analysis, except
 
 ### Files used
 bikeshare.py --> python script for interactive data analysis
+
 chicago.csv --> bikeshare data for Chicago
+
 new_york_city.csv --> bikeshare data for New York City
+
 washington.csv --> bikeshare data for Washington
 
 
