@@ -1,5 +1,4 @@
 import time
-import numpy as np
 import pandas as pd
 
 CITY_DATA = { 'chicago': "chicago.csv",
@@ -24,7 +23,7 @@ def city_choice():
             city = 'new york city'
         
         if city in CITY_DATA:
-            print("Cool, let's see some bikeshare data for {}!.".format(city.title()))
+            print(f"Cool, let's see some bikeshare data for {city.title()}!")
             return city
         elif city in ['all', 'all of it', 'all of them']:
             city = 'all'
@@ -52,7 +51,7 @@ def filter_choice():
         while True:
             month = input("Which month would you like to see? - January, February, March, April, May, or June? ").lower()
             if month in months:
-                print("Great! Let's see what {} has to offer for us.".format(month.title()))
+                print(f"Great! Let's see what {month.title()} has to offer for us.")
                 return month, day
             else:
                 month = input("Hmm, it looks like you haven't typed in one of the selected months. Try again...")
@@ -61,7 +60,7 @@ def filter_choice():
         while True:
             day = input("Which day are you interested in? - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday? ").lower()
             if day in days:
-                print("Cool, we will have a look at the data specifically for {}.".format(day.title()))
+                print(f"Cool, we will have a look at the data specifically for {day.title()}.")
                 return month, day
             else:
                 day = input("Hmm, it looks like you haven/'t typed in one of the days. Try again...")
@@ -130,17 +129,17 @@ def time_stats(df):
     # display the most common month
 
     most_common_month = months[df['month'].value_counts().index[0] -1]
-    print("The most common month for bikeshares is {}.".format(most_common_month.title()))
+    print(f"The most common month for bikeshares is {most_common_month.title()}.")
 
     # display the most common day of week
 
     most_common_day = days[df['day_of_week'].value_counts().index[0]]
-    print("The most common day for bikeshares is {}.".format(most_common_day.title()))
+    print(f"The most common day for bikeshares is {most_common_day.title()}.")
 
     # display the most common start hour
 
     most_common_hour = df['hour'].value_counts().index[0]
-    print("The most common hour for bikeshares is hour {}.".format(most_common_hour))
+    print(f"The most common hour for bikeshares is hour {most_common_hour}.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40) 
@@ -187,15 +186,15 @@ def trip_duration_stats(df):
 
     # display mean travel time
     avg_duration = round(df['Trip Duration'].mean(), 2)
-    print("How long do people rent a bike on average? Thats {} seconds or {} minutes - in both cases rounded.".format(avg_duration, avg_duration//60))
+    print(f"How long do people rent a bike on average? Thats {avg_duration} seconds or {avg_duration//60} minutes - in both cases rounded.")
 
     # display some extra stats
     median_duration = round(df['Trip Duration'].median(), 2)
     print("Hmm, maybe there are some extreme values skewing the data...how about the median duration?")
-    print("The rounded median for the duration is {} seconds and {} minutes.".format(median_duration, median_duration//60))
+    print(f"The rounded median for the duration is {median_duration} seconds and {median_duration//60} minutes.")
     shortest_trip = int(df['Trip Duration'].min())
     longest_trip = int(df['Trip Duration'].max())
-    print("...and the shortest trip was only {} seconds, while the longest trip was {} seconds or {} minutes.".format(shortest_trip, longest_trip, longest_trip//60))
+    print(f"...and the shortest trip was only {shortest_trip} seconds, while the longest trip was {longest_trip} seconds or {longest_trip//60} minutes.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -222,7 +221,7 @@ def user_stats(df):
         earliest_year = df['Birth Year'].min()
         print(f"The earliest year of birth is {earliest_year}.")
         most_recent_year = df['Birth Year'].max()
-        print(f"The earliest year of birth is {most_recent_year}.")
+        print(f"The most recent year of birth is {most_recent_year}.")
         most_common_year = df['Birth Year'].mode()
         print(f"The most common year of birth is {most_common_year}.")
         avg_max_age = int(df['max age'].mean())
